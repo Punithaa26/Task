@@ -36,17 +36,17 @@ const ClientForm = () => {
       const result = await response.json();
 
       if (!response.ok) {
-        // Show each field's error below that field
+        
         const errors = {};
         result.errors.forEach(err => {
           errors[err.path] = err.msg;
         });
         setFieldErrors(errors);
-        setMessage(""); // no success message
+        setMessage(""); 
         return;
       }
 
-      //  Show success message
+      
       setMessageColor("green");
       setMessage(result.message);
       setFormData({
@@ -76,7 +76,7 @@ const ClientForm = () => {
 
         <form onSubmit={handleSubmit} noValidate className="mt-2 mb-2 pt-2 w-75">
 
-          {/* Company Name */}
+        
           <div className="pt-2">
             <label className="form-label" id="formLabel">Company Name *</label>
             <input
@@ -91,7 +91,7 @@ const ClientForm = () => {
             {fieldErrors.companyName && <div style={{ color: "red" }}>{fieldErrors.companyName}</div>}
           </div>
 
-          {/* Name */}
+          
           <div className="pt-3">
             <label className="form-label" id="formLabel">Name *</label>
             <input
@@ -106,7 +106,7 @@ const ClientForm = () => {
             {fieldErrors.name && <div style={{ color: "red" }}>{fieldErrors.name}</div>}
           </div>
 
-          {/* Email */}
+          
           <div className="pt-3">
             <label className="form-label" id="formLabel">Email address *</label>
             <input
@@ -121,7 +121,7 @@ const ClientForm = () => {
             {fieldErrors.email && <div style={{ color: "red" }}>{fieldErrors.email}</div>}
           </div>
 
-          {/* Mobile */}
+          
           <div className="pt-3">
             <label className="form-label" id="formLabel">Mobile Number *</label>
             <input
@@ -136,7 +136,7 @@ const ClientForm = () => {
             {fieldErrors.mobile && <div style={{ color: "red" }}>{fieldErrors.mobile}</div>}
           </div>
 
-          {/* Timeline */}
+          
           <div className="pt-3">
             <label className="form-label" id="formLabel">Estimated Timeline *</label>
             <input
@@ -151,7 +151,7 @@ const ClientForm = () => {
             {fieldErrors.timeline && <div style={{ color: "red" }}>{fieldErrors.timeline}</div>}
           </div>
 
-          {/* Project Name */}
+          
           <div className="pt-3">
             <label className="form-label" id="formLabel">Project Name *</label>
             <input
@@ -166,7 +166,7 @@ const ClientForm = () => {
             {fieldErrors.projectName && <div style={{ color: "red" }}>{fieldErrors.projectName}</div>}
           </div>
 
-          {/* Description */}
+          
           <div className="pt-3">
             <label className="form-label" id="formLabel">Project Description *</label>
             <textarea
@@ -181,7 +181,7 @@ const ClientForm = () => {
             {fieldErrors.description && <div style={{ color: "red" }}>{fieldErrors.description}</div>}
           </div>
 
-          {/* Budget */}
+          
           <div className="pt-3">
             <label className="form-label" id="formLabel">Budget *</label>
             <input
@@ -193,7 +193,7 @@ const ClientForm = () => {
             />
           </div>
 
-          {/* Terms */}
+          
           <div className="form-check pt-3">
             <input className="form-check-input" type="checkbox" id="input" defaultChecked />
             <label className="form-check-label" htmlFor="flexCheck">
@@ -202,10 +202,10 @@ const ClientForm = () => {
             </label>
           </div>
 
-          {/* Submit */}
+          
           <button type="submit" className="button mt-5 w-100">Submit</button>
 
-          {/* Success Message */}
+          
           {message && (
             <div className="mt-3" style={{ color: messageColor, textAlign: "left", fontSize: "1.1rem" }}>
               {message}
